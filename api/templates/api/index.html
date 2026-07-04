@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-900">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StaffFlow - Premium Staff Management System</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f5f7ff',
+              100: '#ebf0ff',
+              200: '#d6e0ff',
+              300: '#b3c7ff',
+              400: '#85a3ff',
+              500: '#5c7aff',
+              600: '#334dff',
+              700: '#1a30f2',
+              800: '#101fc4',
+              900: '#0c179c',
+            }
+          },
+          fontFamily: {
+            sans: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Outfit and Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- React 18 & ReactDOM 18 development files -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Babel Standalone to compile JSX on the fly in the browser -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Custom Styles for premium glassmorphism and animations -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top right, #1e293b, #0f172a);
+    }
+    h1, h2, h3, h4, .font-outfit {
+      font-family: 'Outfit', sans-serif;
+    }
+    /* Custom scrollbar for sleeker dashboard feel */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.3);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.2);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(148, 163, 184, 0.4);
+    }
+    /* Keyframe animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+    /* Glow highlights */
+    .glow-brand {
+      box-shadow: 0 0 25px -5px rgba(92, 122, 255, 0.3);
+    }
+  </style>
+</head>
+<body class="h-full text-slate-100 antialiased overflow-x-hidden">
+  
+  <div id="root" class="h-full"></div>
+
+  <!-- Load the main React app script -->
+  <script src="{% static 'api/js/app.js' %}?v={% now 'U' %}" type="text/babel"></script>
+
+</body>
+</html>
